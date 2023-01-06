@@ -127,7 +127,8 @@ const cardGenerator = () => {
       card.style.pointerEvents = "none";
       setTimeout(() => {
         card.classList.remove("toggleCard");
-        card.style.pointerEvents = "all";}, 2000);
+        card.style.pointerEvents = "all";
+      }, 2000);
     }, 800);
 
     card.addEventListener("click", (e) => {
@@ -180,15 +181,31 @@ const restart = (text) => {
   let cardData = randomize();
   let faces = document.querySelectorAll(".face");
   let cards = document.querySelectorAll(".card");
-  section.style.pointerEvents = "none";
+  //section.style.pointerEvents = "none";
   cardData.forEach((item, index) => {
     cards[index].classList.remove("toggleCard");
+    
     //Randomize
     setTimeout(() => {
-      cards[index].style.pointerEvents = "all";
+      //cards[index].style.pointerEvents = "all";
       cards[index].setAttribute("name", item.name);
       faces[index].src = item.imgSrc;
-      section.style.pointerEvents = "all";
+      //section.style.pointerEvents = "all";
+      
+      
+      
+      //Show cards, then toggle to close card
+      cards[index].classList.add("toggleCard");
+      //cards[index].style.pointerEvents = "none";
+      setTimeout(() => {
+        cards[index].classList.remove("toggleCard");
+        //cards[index].style.pointerEvents = "all";
+        //section.style.pointerEvents = "all";
+      }, 2000);
+     
+      
+      
+      
     }, 1000);
   });
   playerLives = maxLives;
