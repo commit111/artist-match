@@ -145,12 +145,10 @@ const checkCards = (e) => {
   const flippedCards = document.querySelectorAll(".flipped");
   const toggleCards = document.querySelectorAll(".toggleCard");
   const matchedCards = document.querySelectorAll(".matched");
-  
   console.log(clickedCard);
 
   //Logic
   if (flippedCards.length === 2) {
-    
     if (
       flippedCards[0].getAttribute("name") ===
       flippedCards[1].getAttribute("name")
