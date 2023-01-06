@@ -175,7 +175,7 @@ const checkCards = (e) => {
   }
   //Run a check to see if we won the game
   if (toggleCards.length === 16) {
-    setTimeout(() => removeMatched(), 800);
+    setTimeout(() => removeMatched(), 900);
     setTimeout(() => restart("you won!!! ;3"), 2000);
   }
 };
