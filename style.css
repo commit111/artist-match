@@ -25,6 +25,7 @@ section {
   grid-template-rows: repeat(4, 8rem);
   grid-gap: 1.5rem;
   perspective: 800px;
+  margin-bottom: 1rem;
 }
 
 .card{
