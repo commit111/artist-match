@@ -49,8 +49,13 @@ const cardGenerator = () => {
     card.classList = "card";
     face.classList = "face";
     back.classList = "back";
-  });
-  
+    //Attach info to cards
+    face.src = item.imgSrc;
+    //Attach cards to the section
+    section.appendChild(card);
+    card.appendChild(face)
+    card.appendChild(back);
+  }); 
   
 };
 cardGenerator();
