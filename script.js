@@ -198,6 +198,7 @@ const restart = (text) => {
     cards[index].classList.remove("toggleCard");
     cards[index].classList.remove("flipped");
     cards[index].style.pointerEvents = "none";
+    cards[index].classList.remove("matched");
 
     //Randomize
     setTimeout(() => {
@@ -205,23 +206,23 @@ const restart = (text) => {
       cards[index].setAttribute("name", item.name);
       faces[index].src = item.imgSrc;
 
-      //Show cards, then toggle to close card
+      //Show matched glow on reset
       cards[index].classList.add("matched");
-      
+      //Remove matched glow after reset
       setTimeout(() => {
         cards[index].classList.remove("matched");
         setTimeout(() => {
+          //Show cards
           cards[index].classList.add("toggleCard");
-          
-        }, 1150);
-      }, 800);
+        }, 950);
+      }, 600);
       
-
+      //Toggle to close card
       setTimeout(() => {
         cards[index].classList.remove("toggleCard");
         cards[index].style.pointerEvents = "all";
-      }, 3100);
-    }, 2000);
+      }, 3500);
+    }, 1500);
   });
   playerLives = maxLives;
   playerLivesCount.textContent = playerLives;
