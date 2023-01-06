@@ -33,6 +33,7 @@ section {
   transform-style: preserve-3d;
   transition: all 2s cubic-bezier(0.175, 0.9, 0.32, 1.25);
   box-shadow: 5px 7px 12px rgba(0,0,0,0.2);
+  border-radius: 0.6rem;
 }
 
 .face,
@@ -41,6 +42,7 @@ section {
   height: 100%;
   position: absolute;
   pointer-events: none;
+  border-radius: 0.6rem;
 }
 .back{
   background: rgba(241, 241, 241);
