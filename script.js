@@ -121,6 +121,9 @@ const cardGenerator = () => {
     section.appendChild(card);
     card.appendChild(face);
     card.appendChild(back);
+    
+    //Toggle twice at start to show cards
+    setTimeout(() => card.classList.toggle("toggleCard"), 1000);
 
     card.addEventListener("click", (e) => {
       card.classList.toggle("toggleCard");
