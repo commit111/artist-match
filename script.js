@@ -1,7 +1,7 @@
 //Grab a couple of things
 const section = document.querySelector("section");
 const playerLivesCount = document.querySelector("span");
-let maxLives = 6;
+let maxLives = 8;
 let playerLives = maxLives;
 
 

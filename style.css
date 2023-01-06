@@ -43,7 +43,7 @@ section {
   pointer-events: none;
 }
 .back{
-  background: white;
+  background: rgba(241, 241, 241);
   backface-visibility: hidden;
 }
 
