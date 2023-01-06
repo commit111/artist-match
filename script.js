@@ -30,4 +30,27 @@ const getData = () => [
 
 //Randomize data
 
-const randomize = 
+const randomize = () => {
+  const cardData = getData();
+  cardData.sort(() => Math.random() - 0.5)
+  //console.log(cardData);
+  return cardData;
+};
+
+//Card generator function
+const cardGenerator = () => {
+  const cardData = randomize();
+  
+  //Generate the HTML
+  cardData.forEach(item => {
+    const card = document.createElement("div");
+    const face = document.createElement("img");
+    const back = document.createElement("div");
+    card.classList = "card";
+    face.classList = "face";
+    back.classList = "back";
+  });
+  
+  
+};
+cardGenerator();
