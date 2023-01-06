@@ -1,7 +1,7 @@
 //Grab a couple of things
 const section = document.querySelector("section");
 const playerLivesCount = document.querySelector("span");
-let maxLives = 8;
+let maxLives = 5;
 let playerLives = maxLives;
 
 //Link text
@@ -169,7 +169,7 @@ const checkCards = (e) => {
       playerLivesCount.textContent = playerLives;
       if (playerLives === 0) {
         matchedCards.forEach((card) => {
-        card.classList.remove("matched");
+          card.classList.remove("matched");
         });
         setTimeout(() => restart(":< try again!"), 2000);
       }
