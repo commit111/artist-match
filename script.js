@@ -1,7 +1,9 @@
 //Grab a couple of things
 const section = document.querySelector("section");
 const playerLivesCount = document.querySelector("span");
-let playerLives = 6;
+let maxLives = 6;
+let playerLives = maxLives;
+
 
 //Link text
 playerLivesCount.textContent = playerLives;
@@ -153,8 +155,25 @@ const checkCards = (e) => {
       });
       playerLives--;
       playerLivesCount.textContent = playerLives;
+      if (playerLives === 0){
+        restart();
+      }
     }
   }
 };
+
+//Restart the game
+const restart = () => {
+  let cardData = randomize();
+  let faces = document.querySelectorAll(".face");
+  let cards = document.querySelectorAll(".card");
+  cardData.forEach((item,index) => {
+    cards[index].classList.remove("toggleCard");
+    //Randomize
+    cards[index].style.pointerEvents = "all";
+  });
+  playerLives = maxLives;
+  playerLivesCount.textContent = playerLives;
+}
 
 cardGenerator();
