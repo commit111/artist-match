@@ -168,18 +168,25 @@ const checkCards = (e) => {
       playerLives--;
       playerLivesCount.textContent = playerLives;
       if (playerLives === 0) {
-        matchedCards.forEach((card) => {
-          card.classList.remove("matched");
-        });
+        removeMatched();
         setTimeout(() => restart(":< try again!"), 2000);
       }
     }
   }
   //Run a check to see if we won the game
   if (toggleCards.length === 16) {
+    setTimeout(() => removeMatched(), 800);
     setTimeout(() => restart("you won!!! ;3"), 2000);
   }
 };
+
+//Remove the matched class
+const removeMatched = () => {
+  const matchedCards = document.querySelectorAll(".matched");
+  matchedCards.forEach((card) => {
+    card.classList.remove("matched");
+  });
+}
 
 //Restart the game
 const restart = (text) => {
