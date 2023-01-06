@@ -144,6 +144,7 @@ const checkCards = (e) => {
   clickedCard.classList.add("flipped");
   const flippedCards = document.querySelectorAll(".flipped");
   const toggleCards = document.querySelectorAll(".toggleCard");
+  const matchedCards = document.querySelectorAll(".matched");
   console.log(clickedCard);
 
   //Logic
@@ -154,6 +155,7 @@ const checkCards = (e) => {
     ) {
       console.log("match");
       flippedCards.forEach((card) => {
+        card.classList.add("matched");
         card.classList.remove("flipped");
         card.style.pointerEvents = "none";
       });
@@ -166,6 +168,9 @@ const checkCards = (e) => {
       playerLives--;
       playerLivesCount.textContent = playerLives;
       if (playerLives === 0) {
+        matchedCards.forEach((card) => {
+        card.classList.remove("matched");
+        });
         setTimeout(() => restart(":< try again!"), 2000);
       }
     }
@@ -181,31 +186,25 @@ const restart = (text) => {
   let cardData = randomize();
   let faces = document.querySelectorAll(".face");
   let cards = document.querySelectorAll(".card");
-  //section.style.pointerEvents = "none";
+
   cardData.forEach((item, index) => {
     cards[index].classList.remove("toggleCard");
-    
+    cards[index].classList.remove("flipped");
+    cards[index].style.pointerEvents = "none";
+
     //Randomize
     setTimeout(() => {
       //cards[index].style.pointerEvents = "all";
       cards[index].setAttribute("name", item.name);
       faces[index].src = item.imgSrc;
-      //section.style.pointerEvents = "all";
-      
-      
-      
+
       //Show cards, then toggle to close card
       cards[index].classList.add("toggleCard");
-      //cards[index].style.pointerEvents = "none";
+
       setTimeout(() => {
         cards[index].classList.remove("toggleCard");
-        //cards[index].style.pointerEvents = "all";
-        //section.style.pointerEvents = "all";
+        cards[index].style.pointerEvents = "all";
       }, 2000);
-     
-      
-      
-      
     }, 1000);
   });
   playerLives = maxLives;

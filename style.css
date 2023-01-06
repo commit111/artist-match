@@ -50,3 +50,6 @@ section {
 .toggleCard{
   transform: rotateY(180deg);
 }
+.matched{
+  box-shadow: -5px 7px 12px yellow;
+}
