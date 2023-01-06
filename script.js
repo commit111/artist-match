@@ -206,17 +206,22 @@ const restart = (text) => {
       faces[index].src = item.imgSrc;
 
       //Show cards, then toggle to close card
-      cards[index].classList.add("toggleCard");
+      cards[index].classList.add("matched");
       
-      setTimeout(() =>
-      cards[index].classList.add("matched"), 1000);
+      setTimeout(() => {
+        cards[index].classList.remove("matched");
+        setTimeout(() => {
+          cards[index].classList.add("toggleCard");
+          
+        }, 1150);
+      }, 800);
+      
 
       setTimeout(() => {
         cards[index].classList.remove("toggleCard");
-        cards[index].classList.remove("matched");
         cards[index].style.pointerEvents = "all";
-      }, 2050);
-    }, 1000);
+      }, 3100);
+    }, 2000);
   });
   playerLives = maxLives;
   playerLivesCount.textContent = playerLives;
