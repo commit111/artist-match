@@ -176,7 +176,7 @@ const checkCards = (e) => {
   //Run a check to see if we won the game
   if (toggleCards.length === 16) {
     setTimeout(() => removeMatched(), 900);
-    setTimeout(() => restart("you won!!! ;3"), 2000);
+    setTimeout(() => restart("you won!!! ;3"), 2400);
   }
 };
 
@@ -211,7 +211,7 @@ const restart = (text) => {
       setTimeout(() => {
         cards[index].classList.remove("toggleCard");
         cards[index].style.pointerEvents = "all";
-      }, 2000);
+      }, 2050);
     }, 1000);
   });
   playerLives = maxLives;
