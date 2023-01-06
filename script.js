@@ -169,14 +169,14 @@ const checkCards = (e) => {
       playerLivesCount.textContent = playerLives;
       if (playerLives === 0) {
         removeMatched();
-        setTimeout(() => restart(":< try again!"), 2000);
+        setTimeout(() => restart("try again!"), 2000);
       }
     }
   }
   //Run a check to see if we won the game
   if (toggleCards.length === 16) {
     setTimeout(() => removeMatched(), 900);
-    setTimeout(() => restart("you won!!! ;3"), 2400);
+    setTimeout(() => restart("you won!!! :)"), 2400);
   }
 };
 
