@@ -145,10 +145,12 @@ const checkCards = (e) => {
   const flippedCards = document.querySelectorAll(".flipped");
   const toggleCards = document.querySelectorAll(".toggleCard");
   const matchedCards = document.querySelectorAll(".matched");
+  
   console.log(clickedCard);
 
   //Logic
   if (flippedCards.length === 2) {
+    
     if (
       flippedCards[0].getAttribute("name") ===
       flippedCards[1].getAttribute("name")
@@ -186,7 +188,7 @@ const removeMatched = () => {
   matchedCards.forEach((card) => {
     card.classList.remove("matched");
   });
-}
+};
 
 //Restart the game
 const restart = (text) => {
@@ -210,14 +212,14 @@ const restart = (text) => {
       cards[index].classList.add("matched");
       //Remove matched glow after reset
       setTimeout(() => {
-        cards[index].classList.remove("matched");
+        cards[index].classList.remove("matched");  
+        //Show cards preview
         setTimeout(() => {
-          //Show cards
           cards[index].classList.add("toggleCard");
         }, 950);
       }, 600);
-      
-      //Toggle to close card
+
+      //Toggle to close card preview
       setTimeout(() => {
         cards[index].classList.remove("toggleCard");
         cards[index].style.pointerEvents = "all";
