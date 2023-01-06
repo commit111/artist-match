@@ -156,24 +156,36 @@ const checkCards = (e) => {
       playerLives--;
       playerLivesCount.textContent = playerLives;
       if (playerLives === 0){
-        restart();
+        restart(":< try again!");
       }
     }
+  }
+  //Run a check to see if we won the game
+  if(toggleCard.length === 16){
+    restart("you won!!! ;3")
   }
 };
 
 //Restart the game
-const restart = () => {
+const restart = (text) => {
   let cardData = randomize();
   let faces = document.querySelectorAll(".face");
   let cards = document.querySelectorAll(".card");
+  section.style.pointerEvents = "none";
   cardData.forEach((item,index) => {
     cards[index].classList.remove("toggleCard");
     //Randomize
-    cards[index].style.pointerEvents = "all";
+    setTimeout(() => {
+      cards[index].style.pointerEvents = "all";
+      cards[index].setAttribute("name", item.name);
+      faces[index].src = item.imgSrc;
+      section.style.pointerEvents = "all";
+    }, 1000);
+    
   });
   playerLives = maxLives;
   playerLivesCount.textContent = playerLives;
+  setTimeout(() => window.alert(text), 100);
 }
 
 cardGenerator();
