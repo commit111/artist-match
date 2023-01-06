@@ -134,6 +134,7 @@ const checkCards = (e) => {
   const clickedCard = e.target;
   clickedCard.classList.add("flipped");
   const flippedCards = document.querySelectorAll(".flipped");
+  const toggleCards = document.querySelectorAll(".toggleCard");
   console.log(clickedCard);
 
   //Logic
@@ -156,13 +157,13 @@ const checkCards = (e) => {
       playerLives--;
       playerLivesCount.textContent = playerLives;
       if (playerLives === 0){
-        restart(":< try again!");
+        setTimeout(() => restart(":< try again!"), 2000);
       }
     }
   }
   //Run a check to see if we won the game
-  if(toggleCard.length === 16){
-    restart("you won!!! ;3")
+  if(toggleCards.length === 16){
+    setTimeout(() => restart("you won!!! ;3"), 2000);
   }
 };
 
