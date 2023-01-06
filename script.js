@@ -198,27 +198,26 @@ const restart = (text) => {
     cards[index].classList.remove("toggleCard");
     cards[index].classList.remove("flipped");
     cards[index].style.pointerEvents = "none";
-    
-    setTimeout(() => {cards[index].classList.add("matched")
 
-      //Randomize
+    //Randomize
+    setTimeout(() => {
+      //cards[index].style.pointerEvents = "all";
+      cards[index].setAttribute("name", item.name);
+      faces[index].src = item.imgSrc;
+
+      //Show cards, then toggle to close card
+      cards[index].classList.add("toggleCard");
+      
+      setTimeout(() =>
+      cards[index].classList.add("matched"), 1000);
+
       setTimeout(() => {
-        //cards[index].style.pointerEvents = "all";
-        cards[index].setAttribute("name", item.name);
-        faces[index].src = item.imgSrc;
-
-        //Show cards, then toggle to close card
-        cards[index].classList.add("toggleCard");
-
-
-        setTimeout(() => {
-          cards[index].classList.remove("toggleCard");
-          cards[index].classList.remove("matched");
-          cards[index].style.pointerEvents = "all";
-        }, 2050);
-      }, 1000);
-    });
-  }, 750);
+        cards[index].classList.remove("toggleCard");
+        cards[index].classList.remove("matched");
+        cards[index].style.pointerEvents = "all";
+      }, 2050);
+    }, 1000);
+  });
   playerLives = maxLives;
   playerLivesCount.textContent = playerLives;
   setTimeout(() => window.alert(text), 100);
