@@ -57,12 +57,14 @@ section {
   box-shadow: -5px 7px 12px rgba(255, 255, 241);
 }
 
+/* below is loader code, same from navvy savvy
+/* commented out because setTimeout in js is tedious to change
+
 /* note to self
 /* a good combo for loader is
 /* rgba(246, 244, 230); pale yellow bg
 /* rgba(212, 210, 197); greyish circle
 /* anything for the border-top-color
-*/
 
 .loader{
   position: fixed;
@@ -86,10 +88,10 @@ section {
 }
 .loader::after{
   content: "";
-  width: rem;
+  width: 75px;
   height: 75px;
   border: 15px solid rgba(212, 210, 197);
-  border-top-color: rgba(255, 254, 245); /*(76, 107, 107)*/
+  border-top-color: rgba(255, 254, 245); /*(76, 107, 107)
   border-radius: 50%;
   animation: loading 0.75s ease infinite;
 }
@@ -102,3 +104,4 @@ section {
     transform: rotate(1turn);
   }
 }
+*/

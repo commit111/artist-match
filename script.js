@@ -230,3 +230,4 @@ const restart = (text) => {
 };
 
 cardGenerator();
+
